@@ -40,7 +40,7 @@ jobs:
         uses: actions/upload-artifact@v4
         with:
           name: MyUnityGame_Linux64
-          path: build/MyUnityGame_Linux64
+          path: build/StandaloneLinux64
       
       - name: List build files
-        run: ls -lh build/1
+        run: ls -lh build/StandaloneLinux64
