@@ -13,12 +13,13 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v3
 
-      - name: Cache Library
+      - name: Cache
         uses: actions/cache@v3
         with:
-          path: Library
-          key: Library-${{ hashFiles('**/*.cs') }}
+          path: path/to/your/project/Library
+          key: Library-MyProjectName-TargetPlatform
           restore-keys: |
+            Library-MyProjectName-
             Library-
 
 
@@ -32,11 +33,14 @@ jobs:
         with:
           unityVersion: 2022.3.10f1
           targetPlatform: StandaloneLinux64
-          buildName: 1
+          buildName: MyGameExecutable
 
 
       - name: Upload build artifact
         uses: actions/upload-artifact@v4
         with:
-          name: Build
-          path: build/1
+          name: MyUnityGame_Linux64
+          path: build/MyUnityGame_Linux64
+      
+      - name: List build files
+        run: ls -lh build/StandaloneLinux64
