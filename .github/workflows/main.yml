@@ -27,11 +27,11 @@ jobs:
           unityVersion: 2022.3.10f1
           license: ${{ secrets.UNITY_LICENSE }}
 
-      - name: Build project
-        uses: game-ci/unity-builder@v3
+      - name: Upload build
+        uses: actions/upload-artifact@v4
         with:
-          unityVersion: 2022.3.10f1
-          targetPlatform: StandaloneLinux64
+          name: Build
+          path: build/StandaloneLinux64
 
       - name: Upload build
         uses: actions/upload-artifact@v3
