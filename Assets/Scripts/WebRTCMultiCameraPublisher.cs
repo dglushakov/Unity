@@ -9,6 +9,7 @@ using UnityEngine.Experimental.Rendering;
 using System;
 
 public class WebRTCMultiCameraPublisher : MonoBehaviour
+
 {
     public int videoWidth = 1280;
     public int videoHeight = 720;
@@ -21,6 +22,7 @@ public class WebRTCMultiCameraPublisher : MonoBehaviour
     }
 
     private readonly List<CameraStream> cameraStreams = new();
+
 
     void Start()
     {
@@ -111,6 +113,13 @@ public class WebRTCMultiCameraPublisher : MonoBehaviour
         Debug.Log($"Stream started for camera: {camera.name}");
     }
 
+    //метод дл€ начала трансл€ции программно созданных в рантайме камер
+    public void PublishCamera(Camera camera)
+    {
+        string streamName = camera.name.ToLower();
+        StartCoroutine(StartCameraStream(camera, streamName));
+    }
+
     void OnDestroy()
     {
         foreach (var cs in cameraStreams)
@@ -120,5 +129,12 @@ public class WebRTCMultiCameraPublisher : MonoBehaviour
             cs.videoTrack.Dispose();
             cs.renderTexture.Release();
         }
+    }
+
+    public static WebRTCMultiCameraPublisher Instance;
+
+    void Awake()
+    {
+        Instance = this;
     }
 }
