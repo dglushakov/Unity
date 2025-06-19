@@ -74,7 +74,7 @@ public class WebRTCMultiCameraPublisher : MonoBehaviour
         var offer = offerOp.Desc;
         yield return pc.SetLocalDescription(ref offer);
 
-        string whipHost = Environment.GetEnvironmentVariable("WHIP_HOST") ?? "localhost";
+        string whipHost = Environment.GetEnvironmentVariable("WHIP_HOST") ?? "http://localhost:8889";
         string whipUrl = $"{whipHost}/{streamName}/whip";
 
 
