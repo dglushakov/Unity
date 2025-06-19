@@ -33,7 +33,7 @@ jobs:
         with:
           unityVersion: 2022.3.10f1
           targetPlatform: StandaloneLinux64
-          buildName: MyGameExecutable
+          buildName: 1
 
 
       - name: Upload build artifact
@@ -43,4 +43,4 @@ jobs:
           path: build/MyUnityGame_Linux64
       
       - name: List build files
-        run: ls -lh build/StandaloneLinux64
+        run: ls -lh build/1
