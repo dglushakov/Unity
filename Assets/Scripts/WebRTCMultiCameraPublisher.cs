@@ -44,10 +44,12 @@ public class WebRTCMultiCameraPublisher : MonoBehaviour
 
     private IEnumerator StartCameraStream(Camera camera, string streamName)
     {
-        var rt = new RenderTexture(videoWidth, videoHeight, 0)
-        {
-            graphicsFormat = GraphicsFormat.B8G8R8A8_SRGB
-        };
+        var rt = new RenderTexture(videoWidth, videoHeight, 0, RenderTextureFormat.BGRA32);
+        //var rt = new RenderTexture(videoWidth, videoHeight, 0)
+        //{
+        //    graphicsFormat = GraphicsFormat.R8G8B8A8_SRGB
+
+        //};
         rt.Create();
         camera.targetTexture = rt;
 
