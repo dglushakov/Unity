@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class CarSpawner : MonoBehaviour
 {
-
+    //просто для теста сборки
     public GameObject[] Cars;
     void Start()
     {
