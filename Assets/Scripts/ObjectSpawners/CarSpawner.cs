@@ -24,11 +24,11 @@ public class CarSpawner : MonoBehaviour
         int carDirection = Random.Range(0, 2);
         if (carDirection == 1)
         {
-            Instantiate(Cars[carNumber], new Vector3(13f, 0f, 23f), transform.rotation);
+            Instantiate(Cars[carNumber], new Vector3(17f, -0.25f, -60f), transform.rotation);
         }
         else if (carDirection == 0)
         {
-            Instantiate(Cars[carNumber], new Vector3(-2.5f, -1.0f, 19.0f), Quaternion.Euler(0, 180, 0));
+            Instantiate(Cars[carNumber], new Vector3(12f, -0.25f, 24f), Quaternion.Euler(0, 180, 0));
         }
 
 

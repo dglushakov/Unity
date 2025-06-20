@@ -13,7 +13,7 @@ public class DeleteOutOfBounds : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (transform.position.z > 20 || transform.position.z < -63)
+        if (transform.position.z > 25 || transform.position.z < -63)
         {
             Destroy(gameObject);
         }
